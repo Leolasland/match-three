@@ -17,9 +17,7 @@ import ru.project.game_model.Move;
  * <li>Ход приводит хотя бы к одной комбинации.</li>
  * </ol>
  */
-public class MoveValidator {
+public interface MoveValidator {
 
-    public boolean isValid(Move move) {
-
-    }
+    boolean isValid(Move move);
 }

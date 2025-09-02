@@ -9,7 +9,7 @@ import ru.project.game_model.Position;
  * <p>
  * Команды - отсутствуют.
  */
-public class ElementGenerator {
+public interface ElementGenerator {
 
     /**
      * Заполняет недостающие элементы доски для {@link Position}.
@@ -17,15 +17,11 @@ public class ElementGenerator {
      * @param position {@link Position}.
      * @return матрица {@link GameElement}
      */
-    public GameElement generate(Position position) {
-        return null;
-    }
+    GameElement generate(Position position);
 
     /**
      * Инициализация доски происходит без бонусных элементов.
      * @param gameBoard {@link GameBoard}.
      */
-    public void initializeBoard(GameBoard gameBoard) {
-
-    }
+    void initializeBoard(GameBoard gameBoard);
 }

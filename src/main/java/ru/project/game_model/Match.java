@@ -23,6 +23,8 @@ public record Match(Set<Position> positions, GameElement gameElement) {
      * @param gameElement {@link GameElement} элемент
      */
     public Match {
-
+        if (positions == null || gameElement == null) {
+            throw new IllegalArgumentException();
+        }
     }
 }

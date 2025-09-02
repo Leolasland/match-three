@@ -13,56 +13,44 @@ import ru.project.game_model.Position;
  * <p>
  * Ограничения - запросы и команды обращающиеся за пределы игрового поля невозможны.
  */
-public class GameBoard {
+public interface GameBoard {
 
-    private final ElementGenerator elementGenerator;
-    private final GameElement[][] board;
-    public static final int SIZE = 7;
-
-    public GameBoard() {
-        this.elementGenerator = new ElementGenerator();
-        this.board = null;
-        this.elementGenerator.initializeBoard(this);
-    }
+    int SIZE = 7;
 
     /**
      * Возвращает текущее состояние доски
-     * @return
+     * @return GameBoard
      */
-    public GameBoard getBoard() {
-
-    }
+    GameBoard getBoard();
 
     /**
      * Является ли клетка на позиции {@link Position} пустой
      * @return true или false
      */
-    public boolean isEmpty(Position position) {
-
-    }
+    boolean isEmpty(Position position);
 
     /**
      * Установка элемент на позицию
      * @param position {@link Position}
      * @param element {@link GameElement}
      */
-    public void setElementAt(Position position, GameElement element) {
-
-    }
+    void setElementAt(Position position, GameElement element);
 
     /**
      * Поменять два элемента местами
      * @param move {@link Move}
      */
-    public void swapElements(Move move) {
-
-    }
+    void swapElements(Move move);
 
     /**
      * Удалить элемент
      * @param position {@link Position}
      */
-    public void removeElementAt(Position position) {
+    void removeElementAt(Position position);
 
-    }
+    /**
+     * Метод для распечатки доски в консоль
+     * @return
+     */
+    String toString();
 }

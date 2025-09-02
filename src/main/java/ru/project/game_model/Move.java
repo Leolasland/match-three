@@ -1,5 +1,7 @@
 package ru.project.game_model;
 
+import java.util.HashSet;
+
 /**
  * Класс предоставляющий ход игрока - хотим поменять местами два элемента.
  * <p>
@@ -20,6 +22,8 @@ public record Move(Position from, Position to) {
      * @param to   {@link Position} позиция второго элемента
      */
     public Move {
-
+        if (from == null || to == null || from.equals(to)) {
+            throw new IllegalArgumentException();
+        }
     }
 }

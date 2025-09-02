@@ -9,29 +9,20 @@ import ru.project.game_model.Move;
  * <p>
  * Ограничения - метод parseMove обрабатывает только валидный ввод.
  */
-public class InputHandler {
+public interface InputHandler {
 
-    private ErrorHandler errorHandler;
-
-    public InputHandler() {
-        this.errorHandler = new ErrorHandler();
-    }
 
     /**
      * Обрабатывает ввод пользователя.
      * Если ввод не корректный - передает его в ErrorHandler для формирования ошибки.
      * Если ввод корректный - возвращает информацию о команде пользователя.
      */
-    public String handle() {
-
-    }
+    String handle();
 
     /**
      * Парсит строку в формате "БукваЦифра" (например, "A1") в объект Move.
      *
-     * @return
+     * @return {@link Move}
      */
-    public Move parseMove(String input) {
-
-    }
+    Move parseMove(String input);
 }

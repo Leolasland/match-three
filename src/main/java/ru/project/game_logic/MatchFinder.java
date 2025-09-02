@@ -13,23 +13,19 @@ import java.util.List;
  * <p>
  * Команды - отсутствуют, так как класс неизменяемый.
  */
-public class MatchFinder {
+public interface MatchFinder {
 
     /**
      * Проверяет есть ли на поле хотя бы одна возможная комбинация.
      * @param board {@link GameBoard}
      * @return true или false
      */
-    public boolean hasPotentialMatches(GameBoard board) {
-
-    }
+    boolean hasPotentialMatches(GameBoard board);
 
     /**
      * Найти все комбинации из 3+ элементов на текущем поле.
      * @param board {@link GameBoard}
      * @return {@link Match} список комбинаций
      */
-    public List<Match> findMatches(GameBoard board) {
-
-    }
+    List<Match> findMatches(GameBoard board);
 }

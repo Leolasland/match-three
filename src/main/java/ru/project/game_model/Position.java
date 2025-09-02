@@ -20,10 +20,11 @@ public record Position(int row, int column) {
      *
      * @param row    номер строки (начинается с 0, максимум задается в {@link GameBoard})
      * @param column номер столбца (начинается с 0, максимум задается в {@link GameBoard})
-     * @return новый объект Position
      */
     public Position {
-
+        if (row < 0 || row > GameBoard.SIZE || column < 0 || column > GameBoard.SIZE) {
+            throw new IllegalArgumentException();
+        }
     }
 
 }

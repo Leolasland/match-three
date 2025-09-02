@@ -7,7 +7,7 @@ import ru.project.game_model.Match;
  * <p>
  * Запросы - рассчитать очки для набора позиций и типа элемента.
  */
-public class ScoreCalculationStrategy {
+public interface ScoreCalculationStrategy {
 
     /**
      * Расчет очков для позиций и типа элемента
@@ -15,7 +15,5 @@ public class ScoreCalculationStrategy {
      * @param match {@link Match} комбинация элементов
      * @return количество очков
      */
-    public int calculateScore(Match match) {
-
-    }
+    int calculateScore(Match match);
 }

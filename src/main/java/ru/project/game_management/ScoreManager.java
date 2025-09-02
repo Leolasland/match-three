@@ -16,33 +16,24 @@ import java.util.List;
  * <li> Добавляемый ход не может быть null.
  * <li> Добавляемое количество очков не может быть отрицательным или равно нулю.
  */
-public class ScoreManager {
-
-    private List<Move> historyOfMoves;
-    private int score;
+public interface ScoreManager {
 
     /**
      * Добавляем ход для истории и счет
      * @param move ход {@link Move}
      * @param score сколько очков добавляется к счету. Не может быть меньше или равен нуля.
      */
-    public void recordMove(Move move, int score) {
-
-    }
+    void recordMove(Move move, int score);
 
     /**
      * Получить всю историю ходов.
      * @return упорядоченный список ходов {@link Move}
      */
-    public List<Move> getHistoryOfMoves() {
-        return historyOfMoves;
-    }
+    List<Move> getHistoryOfMoves();
 
     /**
      * Получить итоговый счет
      * @return количество очков
      */
-    public int getScore() {
-        return score;
-    }
+    int getScore();
 }
