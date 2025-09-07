@@ -1,30 +1,37 @@
 package ru.project.core_engine;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
- * Элемент (A, B, C, D, E), может быть бонусным.
+ * Элемент (A, B, C, D, E) - не может быть бонусным.
+ * Элемент (ROCKET, BOMB) - бонусный.
  * <p>
- * Запросы - узнать является ли элемент бонусным.
+ * Запросы - узнать является ли элемент бонусным, получить все не бонусные элементы, или все бонусные, получить тип элемента.
  * <p>
  * Команды - отсутствуют, так как класс неизменяемый.
  */
-public enum GameElement {
-    A(false),
-    B(false),
-    C(false),
-    D(false),
-    E(false),
-    ROCKET(true),
-    BOMB(true);
+public interface GameElement<T extends GameElement> {
 
-    private final boolean isBonus;
 
-    GameElement(boolean isBonus) {
-        this.isBonus = isBonus;
+    boolean isBonus();
+
+    T getType();
+
+    static List<GameElement> getAllGameElements() {
+        List<GameElement> allElements = new ArrayList<>();
+
+        allElements.addAll(getAllBonusGameElements());
+        allElements.addAll(getAllDefaulGameElements());
+        return allElements;
     }
 
-    boolean isBonus() {
-        return isBonus;
+    static List<GameElement> getAllBonusGameElements() {
+        return Arrays.asList(GameElementBonus.values());
     }
 
-
+    static List<GameElement> getAllDefaulGameElements() {
+        return Arrays.asList(GameElementDefault.values());
+    }
 }

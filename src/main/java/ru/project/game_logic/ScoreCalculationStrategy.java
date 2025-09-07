@@ -2,6 +2,8 @@ package ru.project.game_logic;
 
 import ru.project.game_model.Match;
 
+import java.util.List;
+
 /**
  * Стратегия начисления очков за комбинации, в том числе бонусные.
  * <p>
@@ -12,8 +14,8 @@ public interface ScoreCalculationStrategy {
     /**
      * Расчет очков для позиций и типа элемента
      *
-     * @param match {@link Match} комбинация элементов
+     * @param matches {@link Match} комбинация элементов
      * @return количество очков
      */
-    int calculateScore(Match match);
+    int calculateScore(List<Match> matches);
 }

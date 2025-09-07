@@ -1,5 +1,7 @@
 package ru.project.game_management;
 
+import ru.project.game_logic.ScoreCalculationStrategy;
+import ru.project.game_model.Match;
 import ru.project.game_model.Move;
 
 import java.util.List;
@@ -21,9 +23,9 @@ public interface ScoreManager {
     /**
      * Добавляем ход для истории и счет
      * @param move ход {@link Move}
-     * @param score сколько очков добавляется к счету. Не может быть меньше или равен нуля.
+     * @param matches совпадения для подсчета очков в {@link ScoreCalculationStrategy}
      */
-    void recordMove(Move move, int score);
+    void recordMove(Move move, List<Match> matches);
 
     /**
      * Получить всю историю ходов.

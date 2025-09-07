@@ -1,26 +1,30 @@
 package ru.project.core_engine;
 
-import ru.project.game_model.Position;
-
 /**
  * Генерирует элементы.
  * <p>
  * Запросы - генерация элемента.
  * <p>
- * Команды - отсутствуют.
+ * Команды - инициализация доски.
  */
 public interface ElementGenerator {
 
     /**
-     * Заполняет недостающие элементы доски для {@link Position}.
+     * Генерирует элемент
      *
-     * @param position {@link Position}.
-     * @return матрица {@link GameElement}
+     * @return элемент {@link GameElement}
      */
-    GameElement generate(Position position);
+    GameElement generate();
+
+    /**
+     * Генерирует бонусный элемент
+     * @return элемент {@link GameElement}
+     */
+    GameElement generateBonus();
 
     /**
      * Инициализация доски происходит без бонусных элементов.
+     * Доска первоначально заполняется элементами которые гарантировано не создают комбинаций.
      * @param gameBoard {@link GameBoard}.
      */
     void initializeBoard(GameBoard gameBoard);

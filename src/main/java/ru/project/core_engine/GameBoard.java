@@ -1,13 +1,16 @@
 package ru.project.core_engine;
 
+import ru.project.game_model.Match;
 import ru.project.game_model.Move;
 import ru.project.game_model.Position;
+
+import java.util.List;
 
 /**
  * Игровое поле, хранит и обновляет состояние
  * Размер игрового поля - 8 элементов.
  * <p>
- * Запросы - получить текущее состояние доски и проверить является ли клетка на позиции пустой.
+ * Запросы - получить текущее состояние доски и проверить является ли клетка на позиции пустой, получить элемент на позиции.
  * <p>
  * Команды - поменять элементы местами и установка, удаление элемента на позиции.
  * <p>
@@ -15,19 +18,7 @@ import ru.project.game_model.Position;
  */
 public interface GameBoard {
 
-    int SIZE = 7;
-
-    /**
-     * Возвращает текущее состояние доски
-     * @return GameBoard
-     */
-    GameBoard getBoard();
-
-    /**
-     * Является ли клетка на позиции {@link Position} пустой
-     * @return true или false
-     */
-    boolean isEmpty(Position position);
+    int SIZE = 8;
 
     /**
      * Установка элемент на позицию
@@ -48,9 +39,20 @@ public interface GameBoard {
      */
     void removeElementAt(Position position);
 
+    void processMatches(List<Match> matches);
+
     /**
-     * Метод для распечатки доски в консоль
+     * Получить элемент на позиции
+     * @param position {@link Position} позиция, не может быть пустым
+     * @return {@link GameElement} элемент
+     */
+    GameElement getElementAt(Position position);
+
+    /**
+     * Метод для получения доски
      * @return
      */
-    String toString();
+    GameElement[][] getBoardElements();
+
+    List<Match> checkForMatches();
 }

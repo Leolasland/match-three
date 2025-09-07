@@ -8,8 +8,14 @@ package ru.project.user_interaction;
 public interface ErrorHandler {
 
     /**
-     * Выводит сообщение об ошибке в консоль
+     * Возвращает сообщение об ошибке
      * @param e
      */
-    void handleError(Exception e);
+    String handleError(Exception e);
+
+    /**
+     * Возвращает сообщение об ошибке в консоль
+     * @param input
+     */
+    String handleInputError(String input);
 }
