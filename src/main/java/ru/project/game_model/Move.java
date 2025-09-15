@@ -1,7 +1,5 @@
 package ru.project.game_model;
 
-import java.util.HashSet;
-
 /**
  * Класс предоставляющий ход игрока - хотим поменять местами два элемента.
  * <p>

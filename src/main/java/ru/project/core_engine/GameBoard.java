@@ -48,11 +48,5 @@ public interface GameBoard {
      */
     GameElement getElementAt(Position position);
 
-    /**
-     * Метод для получения доски
-     * @return
-     */
-    GameElement[][] getBoardElements();
-
     List<Match> checkForMatches();
 }

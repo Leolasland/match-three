@@ -2,12 +2,12 @@ package ru.project.game_model;
 
 import ru.project.core_engine.GameElement;
 
-import java.util.Set;
+import java.util.List;
 
 /**
  * Класс предоставляющий комбинацию из трех и более одинаковых элементов.
  * <p>
- * Запросы - получить набор {@link Position} позиций и элемент {@link GameElement}.
+ * Запросы - получить список {@link Position} позиций и элемент {@link GameElement}.
  * <p>
  * Команды - отсутствуют, так как класс неизменяемый.
  * <p>
@@ -15,7 +15,7 @@ import java.util.Set;
  * <li> Набор позиций не может быть null или пустым.
  * <li> Элемент не может быть пустым.
  */
-public record Match(Set<Position> positions, GameElement gameElement) {
+public record Match(List<Position> positions, GameElement gameElement) {
 
     /**
      * Создаем комбинацию

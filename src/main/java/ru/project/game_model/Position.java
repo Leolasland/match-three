@@ -22,7 +22,7 @@ public record Position(int row, int column) {
      * @param column номер столбца (начинается с 0, максимум задается в {@link GameBoard})
      */
     public Position {
-        if (row < 0 || row > GameBoard.SIZE || column < 0 || column > GameBoard.SIZE) {
+        if (row < 0 || row >= GameBoard.SIZE || column < 0 || column >= GameBoard.SIZE) {
             throw new IllegalArgumentException();
         }
     }
